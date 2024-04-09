@@ -1,11 +1,29 @@
 .App{
+  
+}
+
+body{
+    margin: 0;
+    padding: 0;
     background-image: url('../assets/background.png');
     background-size: 100% 100%;
     background-position: center;
     min-height: 100vh;
+    display: flex;
+    justify-content: flex-end;
 }
 
-body{
-    padding:0;
-    margin:0;
+.hotels {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.hotel-card-container{
+    
+        width: 300px;
+        padding: 20px;
+        border: 1px solid black;
+        margin-right: 20px;
+        box-sizing: border-box;
 }
