@@ -9,6 +9,7 @@ function App() {
   const hotels = [
     {
       name: "Iberostar Grande Salome",
+      location: "Costa Adeje, Tenerife",
       image: hotelImage1,
       description: "big old hotel",
       price: "100",
@@ -16,6 +17,7 @@ function App() {
     },
     {
       name: "Aguamarina Golf Hotel",
+      location: "Costa Adeje, Tenerife",
       image: hotelImage2,
       description: "another nice hotel",
       price: "696.80",
@@ -23,6 +25,7 @@ function App() {
     },
     {
       name: "Las Piramidas Resort",
+      location: "Costa Adeje, Tenerife",
       image: hotelImage3,
       description: "another nice hotel",
       price: "499.99",
@@ -35,6 +38,7 @@ function App() {
         <HotelCard
           key={index}
           name={hotel.name}
+          location={hotel.location}
           image={hotel.image}
           description={hotel.description}
           price={hotel.price}

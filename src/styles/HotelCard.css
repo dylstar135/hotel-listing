@@ -1,0 +1,19 @@
+.price-button {
+    background-color: gold; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    width: 300px;
+    color: navy;
+  }
+  
+  .price-button:hover {
+    background-color: #ffcc00; 
+  }
+
+  .book-now{
+    color: navy;
+  }
+  
