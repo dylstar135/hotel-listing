@@ -23,7 +23,9 @@ const HotelCard = ({
         <h2>{name}</h2>
         <p className="location">{location}</p>
         <button className="toggle-button" onClick={toggleDescription}>
-          {expanded ? "Hide Hotel Description" : "Show Hotel Description"}
+          {expanded
+            ? "Read less about this hotel"
+            : "Read more about this hotel"}
         </button>
         <div className={`description-container ${expanded ? "expanded" : ""}`}>
           <p className="description">

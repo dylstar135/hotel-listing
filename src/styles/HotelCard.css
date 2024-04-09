@@ -33,6 +33,37 @@
     height: auto; 
     visibility: visible; 
   }
+
+  .price-button-container {
+    position: absolute;
+    bottom: 10px;
+    left: 75%; 
+    transform: translateX(-50%); 
+  }
+  
+  .price-button {
+    background-color: gold;
+    color: navy;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 200px;
+  }
+  
+  .price-button:hover {
+    background-color: #ffcc00;
+  }
+  
+  .book-now {
+    color: navy;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  
   
   
   
