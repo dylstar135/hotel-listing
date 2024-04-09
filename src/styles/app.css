@@ -13,17 +13,27 @@ body{
     justify-content: flex-end;
 }
 
-.hotels {
-    display: flex;
-    align-items: flex-start;
-    padding: 20px;
-}
 
 .hotel-card-container{
     
-        width: 300px;
-        padding: 20px;
-        border: 1px solid black;
-        margin-right: 20px;
+        width: 900px;
+        margin-right: 200px;
+        margin-top: 50px;
         box-sizing: border-box;
+        background-color: white;
+        display: flex;
+        align-items: center;
+}
+
+.hotel-card-container img {
+    flex: 1; /* Let the image grow to fill the available space */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+
+.hotel-card-container .hotel {
+    flex: 2; 
+    color: navy; 
+    padding-left: 50px;
+    
 }
