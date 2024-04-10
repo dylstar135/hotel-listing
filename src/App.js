@@ -13,7 +13,7 @@ function App() {
       location: "Costa Adeje, Tenerife",
       image: hotelImage1,
       description: "big old hotel",
-      price: "100",
+      price: "1,136.50",
       stars: "****",
     },
     {
@@ -34,7 +34,14 @@ function App() {
     },
   ];
 
-  const [sortedHotels, setSortedHotels] = useState(hotels);
+  const [sortedHotels, setSortedHotels] = useState(() => {
+    const sortedByPrice = [...hotels].sort(
+      (a, b) =>
+        parseFloat(a.price.replace(",", "")) -
+        parseFloat(b.price.replace(",", ""))
+    );
+    return sortedByPrice;
+  });
 
   const handleSortChange = (sortType) => {
     let sortedHotelsCopy = [...sortedHotels];
@@ -45,7 +52,9 @@ function App() {
         break;
       case "price":
         sortedHotelsCopy.sort(
-          (a, b) => parseFloat(a.price) - parseFloat(b.price)
+          (a, b) =>
+            parseFloat(a.price.replace(",", "")) -
+            parseFloat(b.price.replace(",", ""))
         );
         break;
       case "rating":

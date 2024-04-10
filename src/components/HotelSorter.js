@@ -8,13 +8,13 @@ const HotelSorter = ({ handleSortChange }) => {
         className="sort-option"
         onClick={() => handleSortChange("alphabetically")}
       >
-        Sort Alphabetically
+        sort alphabetically
       </div>
       <div className="sort-option" onClick={() => handleSortChange("price")}>
-        Sort by Price
+        sort by price
       </div>
       <div className="sort-option" onClick={() => handleSortChange("rating")}>
-        Sort by Rating
+        sort by rating
       </div>
     </div>
   );
