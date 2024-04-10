@@ -17,8 +17,7 @@ body{
 .hotel-card-container{
     
         width: 900px;
-        /*padding: 20px;*/
-        /*border: 1px solid black;*/
+      
         margin-right: 200px;
         margin-top: 50px;
         box-sizing: border-box;
@@ -28,8 +27,8 @@ body{
 }
 
 .hotel-card-container img {
-    flex: 1; /* Let the image grow to fill the available space */
-    height: auto; /* Maintain the aspect ratio */
+    flex: 1; 
+    height: auto; 
 }
 
 

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/app.css";
 import HotelCard from "./components/HotelCard.js";
+import HotelSorter from "./components/HotelSorter.js";
 import hotelImage1 from "./assets/hotel-image-1.png";
 import hotelImage2 from "./assets/hotel-image-2.png";
 import hotelImage3 from "./assets/hotel-image-3.png";
@@ -32,19 +33,47 @@ function App() {
       stars: "***",
     },
   ];
+
+  const [sortedHotels, setSortedHotels] = useState(hotels);
+
+  const handleSortChange = (sortType) => {
+    let sortedHotelsCopy = [...sortedHotels];
+
+    switch (sortType) {
+      case "alphabetically":
+        sortedHotelsCopy.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case "price":
+        sortedHotelsCopy.sort(
+          (a, b) => parseFloat(a.price) - parseFloat(b.price)
+        );
+        break;
+      case "rating":
+        sortedHotelsCopy.sort((a, b) => b.stars.length - a.stars.length);
+        break;
+      default:
+        break;
+    }
+
+    setSortedHotels(sortedHotelsCopy);
+  };
+
   return (
-    <div className="hotels">
-      {hotels.map((hotel, index) => (
-        <HotelCard
-          key={index}
-          name={hotel.name}
-          location={hotel.location}
-          image={hotel.image}
-          description={hotel.description}
-          price={hotel.price}
-          stars={hotel.stars}
-        />
-      ))}
+    <div className="app-container">
+      <HotelSorter handleSortChange={handleSortChange} />
+      <div className="hotels">
+        {sortedHotels.map((hotel, index) => (
+          <HotelCard
+            key={index}
+            name={hotel.name}
+            location={hotel.location}
+            image={hotel.image}
+            description={hotel.description}
+            price={hotel.price}
+            stars={hotel.stars}
+          />
+        ))}
+      </div>
     </div>
   );
 }

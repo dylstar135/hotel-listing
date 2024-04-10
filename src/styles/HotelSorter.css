@@ -1,0 +1,22 @@
+
+.hotel-sorter-container {
+    position: fixed;
+    top: 15%;
+    left: 100px; /* Adjust the left position */
+    transform: translateY(-50%);
+  }
+  
+  .sort-option {
+    margin-bottom: 3px; /* Spacing between options */
+    cursor: pointer;
+    padding: 5px; /* Add padding to create space around each option */
+    border: 1px solid #ccc; /* Add border to each option */
+    
+    width: 250px; /* Set the width of each option */
+    background-color: white;
+  }
+  
+  .sort-option:hover {
+    background-color: #007bff;
+  }
+  
