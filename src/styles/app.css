@@ -11,30 +11,6 @@ body{
     min-height: 100vh;
     display: flex;
     justify-content: flex-end;
+    font-family: 'Roboto', sans-serif;
 }
 
-
-.hotel-card-container{
-    
-        width: 900px;
-      
-        margin-right: 200px;
-        margin-top: 50px;
-        box-sizing: border-box;
-        background-color: white;
-        display: flex;
-        align-items: center;
-}
-
-.hotel-card-container img {
-    flex: 1; 
-    height: auto; 
-}
-
-
-.hotel-card-container .hotel {
-    flex: 2; 
-    color: navy; 
-    padding-left: 50px;
-    
-}

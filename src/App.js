@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import "./styles/app.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+
 import HotelCard from "./components/HotelCard.js";
 import HotelSorter from "./components/HotelSorter.js";
+// Remove the import statement for StarRating
 import hotelImage1 from "./assets/hotel-image-1.png";
 import hotelImage2 from "./assets/hotel-image-2.png";
 import hotelImage3 from "./assets/hotel-image-3.png";
@@ -14,7 +18,7 @@ function App() {
       image: hotelImage1,
       description: "big old hotel",
       price: "1,136.50",
-      stars: "****",
+      rating: 2,
     },
     {
       name: "Aguamarina Golf Hotel",
@@ -22,7 +26,7 @@ function App() {
       image: hotelImage2,
       description: "another nice hotel",
       price: "696.80",
-      stars: "****",
+      rating: 4,
     },
     {
       name: "Las Piramidas Resort",
@@ -30,7 +34,7 @@ function App() {
       image: hotelImage3,
       description: "another nice hotel",
       price: "499.99",
-      stars: "***",
+      rating: 3,
     },
   ];
 
@@ -58,8 +62,9 @@ function App() {
         );
         break;
       case "rating":
-        sortedHotelsCopy.sort((a, b) => b.stars.length - a.stars.length);
+        sortedHotelsCopy.sort((a, b) => b.rating - a.rating);
         break;
+
       default:
         break;
     }
@@ -69,6 +74,7 @@ function App() {
 
   return (
     <div className="app-container">
+      <FontAwesomeIcon icon={faStar} />
       <HotelSorter handleSortChange={handleSortChange} />
       <div className="hotels">
         {sortedHotels.map((hotel, index) => (
@@ -79,7 +85,7 @@ function App() {
             image={hotel.image}
             description={hotel.description}
             price={hotel.price}
-            stars={hotel.stars}
+            rating={hotel.rating} // Directly passing 'rating' prop
           />
         ))}
       </div>

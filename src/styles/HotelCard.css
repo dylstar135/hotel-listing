@@ -1,5 +1,31 @@
-.hotel-card-container {
+.hotel-card-container{
     position: relative;
+    width: 900px;
+    margin-right: 200px;
+    margin-top: 50px;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+  .hotel-card-container img {
+    flex: 1; 
+    height: auto; 
+}
+
+
+.hotel-card-container .hotel {
+    flex: 2; 
+    color: navy; 
+    padding-left: 50px;
+    margin-top: -150px;
+    
+}
+
+  .location{
+    color: gray;
+    margin-top: -10px;
   }
   
   .toggle-button {
@@ -36,20 +62,20 @@
 
   .price-button-container {
     position: absolute;
-    bottom: 10px;
+    bottom: 25px;
     left: 75%; 
     transform: translateX(-50%); 
+    
   }
   
   .price-button {
     background-color: gold;
     color: navy;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 10px 20px;
-    font-weight: bold;
     cursor: pointer;
-    width: 200px;
+    width: 300px;
   }
   
   .price-button:hover {
@@ -58,10 +84,20 @@
   
   .book-now {
     color: navy;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-size: 10px;
+     margin-bottom: 5px;
   }
+
+  .bold-price{
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .bold-price, .book-now {
+    display: block;
+  }
+
+  
   
   
   

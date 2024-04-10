@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./../styles/HotelCard.css";
+import StarRating from "./StarRating.js";
 
 const HotelCard = ({
   name,
@@ -8,7 +9,7 @@ const HotelCard = ({
   price,
   description,
   hotelDescription,
-  rating,
+  rating, // Receiving 'rating' prop directly
 }) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -18,7 +19,7 @@ const HotelCard = ({
 
   return (
     <div className="hotel-card-container">
-      <img src={image} alt="name" />
+      <img src={image} alt={name} /> {/* Changed alt to name */}
       <div className="hotel">
         <h2>{name}</h2>
         <p className="location">{location}</p>
@@ -32,14 +33,12 @@ const HotelCard = ({
             {expanded ? hotelDescription : description}
           </p>
         </div>
-        <p>
-          <strong>Rating:</strong>
-          <span className="stars">{rating}</span>
-        </p>
+        <StarRating rating={rating} />{" "}
+        {/* Passing 'rating' prop to StarRating directly */}
         <div className="price-button-container">
           <button className="price-button">
             <span className="book-now">Book Now</span>
-            <br />£{price}
+            <span className="bold-price">£{price}</span>
           </button>
         </div>
       </div>

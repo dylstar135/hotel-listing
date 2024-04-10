@@ -9,14 +9,22 @@
   .sort-option {
     margin-bottom: 3px; 
     cursor: pointer;
-    padding: 5px; 
+    padding: 15px; 
     border: 1px solid #ccc; 
     
     width: 250px;
     background-color: white;
+    color:navy ;
   }
   
-  .sort-option:hover {
+
+  .sort-option:hover,
+  .sort-option:focus {
     background-color: #007bff;
+    
   }
-  
+
+  .sort-option.active {
+    background-color: #007bff;
+    color: white;
+  }
