@@ -8,8 +8,8 @@ const HotelCard = ({
   image,
   price,
   description,
-  hotelDescription,
-  rating, // Receiving 'rating' prop directly
+  rating,
+  bookingInfo,
 }) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -18,23 +18,28 @@ const HotelCard = ({
   };
 
   return (
-    <div className="hotel-card-container">
-      <img src={image} alt={name} /> {/* Changed alt to name */}
-      <div className="hotel">
-        <h2>{name}</h2>
-        <p className="location">{location}</p>
+    <div className={`hotel-card-container ${expanded ? "expanded" : ""}`}>
+      <div className="image-container">
+        <img src={image} alt={name} />
         <button className="toggle-button" onClick={toggleDescription}>
-          {expanded
-            ? "Read less about this hotel"
-            : "Read more about this hotel"}
+          {expanded ? "Read less" : "Read more"} about this hotel
         </button>
-        <div className={`description-container ${expanded ? "expanded" : ""}`}>
-          <p className="description">
-            {expanded ? hotelDescription : description}
-          </p>
+      </div>
+      <div className="hotel-details">
+        <div className="hotel-info">
+          <h3>{name}</h3>
+          <p className="location">{location}</p>
+          <div
+            className={`description-container ${expanded ? "expanded" : ""}`}
+          >
+            <p className="description">{description}</p>
+          </div>
+          <StarRating rating={rating} />
+          <div className="booking-details">
+            <p></p>
+            <p>{bookingInfo}</p> {/* Render booking details as text */}
+          </div>
         </div>
-        <StarRating rating={rating} />{" "}
-        {/* Passing 'rating' prop to StarRating directly */}
         <div className="price-button-container">
           <button className="price-button">
             <span className="book-now">Book Now</span>

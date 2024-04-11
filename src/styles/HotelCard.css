@@ -15,7 +15,7 @@
 }
 
 
-.hotel-card-container .hotel {
+.hotel-card-container .hotel-info{
     flex: 2; 
     color: navy; 
     padding-left: 50px;
@@ -42,18 +42,24 @@
   
   .description-container {
     position: absolute;
-    top: calc(100% + 10px);
-    left: 10px; 
-    width: calc(100% - 20px); 
-    padding: 10px;
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    top: calc(90% + 10px);
+    left: 0px; 
+    width: calc(100% - 10px); 
+    padding-top: 5px;
+    padding-left: 10px;
+    background-color: white;
+   
+    
     transition: height 0.3s ease-out;
     overflow: hidden;
     height: 0; 
     visibility: hidden;
   }
+
+ .description{
+    padding-top: 0;
+    margin-top: 0;
+ }
   
   .expanded {
     height: auto; 
@@ -95,6 +101,10 @@
 
   .bold-price, .book-now {
     display: block;
+  }
+
+  .booking-details{
+    color: grey;
   }
 
   

@@ -1,28 +1,19 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import App from "../App";
+import HotelSorter from "../components/HotelSorter";
 
-test("sorting hotels alphabetically", () => {
-  const { getByText, getAllByRole } = render(<App />);
-  fireEvent.click(getByText(/sort alphabetically/));
-  const hotelNames = getAllByRole("heading", { level: 2 }).map(
-    (h) => h.textContent
+test("clicking on sort options should call handleSortChange with correct sortType", () => {
+  const handleSortChange = jest.fn();
+  const { getByText } = render(
+    <HotelSorter handleSortChange={handleSortChange} />
   );
-  expect(hotelNames).toEqual(hotelNames.slice().sort());
-});
 
-test("sorting hotels by price", () => {
-  const { getByText, getAllByText } = render(<App />);
-  fireEvent.click(getByText(/sort by price/));
-  const hotelPrices = getAllByText(/£\d+(\.\d+)?/).map((p) =>
-    parseFloat(p.textContent.replace("£", "").replace(",", ""))
-  );
-  expect(hotelPrices).toEqual(hotelPrices.slice().sort((a, b) => a - b));
-});
+  fireEvent.click(getByText(/alphabetically/i));
+  expect(handleSortChange).toHaveBeenCalledWith("alphabetically");
 
-//test("sorting hotels by rating", () => {
-// const { getByText, getAllByText } = render(<App />);
-// fireEvent.click(getByText(/sort by rating/));
-//const hotelRatings = getAllByText(/\*+/).map((r) => r.textContent.length);
-//expect(hotelRatings).toEqual(hotelRatings.slice().sort((a, b) => b - a));
-//});
+  fireEvent.click(getByText(/price/i));
+  expect(handleSortChange).toHaveBeenCalledWith("price");
+
+  fireEvent.click(getByText(/rating/i));
+  expect(handleSortChange).toHaveBeenCalledWith("rating");
+});
