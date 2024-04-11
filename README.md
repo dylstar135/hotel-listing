@@ -1,3 +1,33 @@
+#Hotel Listing Component
+really enjoyed creating this, found some parts of it reassuring in my knowledge, and relished the parts where I struggled. particulary struggled gettin the fontawesome stars to render corretly but managed to overcome that with research. my main issue was getting the htoel description box the work as id like, although the container is there and expands, it isnt quite to design spec, and I would like some advice on how to make it match. Thanks for considering me, and giving me this great oppurtunity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
